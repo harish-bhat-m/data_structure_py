@@ -25,10 +25,14 @@ class Trei(object):
             node = node.children[index]
         node.last = True
 
-    def iterate(self):
-        for i in self.root:
-            print(i)
+    def iterate(self, r=0):
+        if self.root.last:
+            print("Yes")
+            return True
+        elif self.root.children != None:
+            self.iterate(self.root.children)
 
+        
 def main():
     trei = Trei()
     words = ["hello", "how", "are", "you"]
